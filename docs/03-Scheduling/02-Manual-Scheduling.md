@@ -29,7 +29,7 @@ In this section, we will take a look at **`Manually Scheduling`** a **`POD`** on
     
     ![sc2](../../images/sc2.PNG)
     
-  - Another way
+  - Another way or if pod already present, you can't add nodeName once pod is deployed then
     ```
     apiVersion: v1
     kind: Binding
