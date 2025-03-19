@@ -93,8 +93,19 @@ In this section we will take a look at **`services`** in kubernetes
  1. ClusterIP
     - In this case the service creates a **`Virtual IP`** inside the cluster to enable communication between different services such as a set of frontend servers to a set of backend servers.
     
- 1. LoadBalancer
+ 2. LoadBalancer
     - Where the service provisions a **`loadbalancer`** for our application in supported cloud providers.
+   
+ 3. Reverse Proxy/Software Load Balancer:
+    If you need full control over routing and load balancing, you can use a reverse proxy or software-based load balancer, like HAProxy or NGINX, to route traffic to your Kubernetes services.
+
+4. Ingress-Controller:
+   If you want to expose multiple services externally and avoid the limitations of NodePort, you can use an Ingress Controller. Ingress provides more advanced traffic routing and management.
+
+   How it works:
+     An Ingress Controller manages Ingress resources, which define rules for routing external HTTP(S) traffic to different Services inside the cluster.
+     It acts as a reverse proxy that handles incoming requests and forwards them to the appropriate services based on defined rules (e.g., paths or hostnames).
+     An Ingress Controller can be used with various tools, including NGINX, Traefik, or HAProxy.
     
 K8s Reference Docs:
 - https://kubernetes.io/docs/concepts/services-networking/service/
