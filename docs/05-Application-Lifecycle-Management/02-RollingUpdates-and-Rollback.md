@@ -47,6 +47,11 @@ In this section, we will take a look at rolling updates and rollback in a deploy
       - name: nginx-container
         image: nginx:1.7.1
    replicas: 3
+   strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1          # Maximum extra Pods created during the update
+      maxUnavailable: 1    # Maximum Pods unavailable during the update
    selector:
     matchLabels:
       type: front-end       
